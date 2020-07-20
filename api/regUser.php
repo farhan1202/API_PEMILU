@@ -6,7 +6,7 @@
     }
 
     $nobp = $_POST['nobp'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     $nama = $_POST['nama'];
     $date = new DateTime();
     $datenow = $date->format("Y-m-d H:i:s");

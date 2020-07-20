@@ -3,14 +3,14 @@
 
     class emp{}
     $nobp = $_POST['nobp'];
-    $query = "SELECT * FROM user WHERE nobp = '$nobp'";
+    $token = $_POST['token'];
+    $query = "SELECT * FROM user WHERE nobp = '$nobp' AND token ='$token'";
     $hasil = mysqli_query($con, $query);
 
     $rows = mysqli_fetch_array($hasil);
     if ($rows) {
         $response = new emp();
         $response1 = new emp();
-        
         $response1->nobp = $rows['nobp'];
         $response1->nama = $rows['nama'];
         $response->STATUS="200";
