@@ -4,7 +4,7 @@
     class emp{}
     $nobp = $_POST['nobp'];
     $token = $_POST['token'];
-    $query = "SELECT * FROM user WHERE nobp = '$nobp' AND token ='$token'";
+    $query = "SELECT * FROM tb_user WHERE nobp = '$nobp' AND token ='$token'";
     $hasil = mysqli_query($con, $query);
 
     $rows = mysqli_fetch_array($hasil);

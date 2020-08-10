@@ -4,10 +4,10 @@
     class emp{}
     $nobp = $_POST['nobp'];
     $token = $_POST['token'];
-    $query1 = "SELECT * FROM user WHERE nobp = '$nobp' AND token ='$token'";
+    $query1 = "SELECT * FROM tb_user WHERE nobp = '$nobp' AND token ='$token'";
     $hasil1 = mysqli_query($con, $query1);
     if(mysqli_fetch_array($hasil1)){
-        $query = "SELECT * FROM rfid WHERE nobp = '$nobp' ";
+        $query = "SELECT * FROM tb_status WHERE nobp = '$nobp' ";
         $hasil = mysqli_query($con, $query);
     
         $rows = mysqli_fetch_array($hasil);
@@ -30,7 +30,7 @@
         }
     }else{
         $response = new emp();
-        $response->STATUS="200";
+        $response->STATUS="400";
         $response->MESSAGE="Invalid TOKEN";
         die(json_encode($response));
     }

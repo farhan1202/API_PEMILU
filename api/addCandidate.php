@@ -13,12 +13,12 @@
     $date = new DateTime();
     $datenow = $date->format("Y-m-d H:i:s");
 
-    $query1 = mysqli_query($con, "SELECT * FROM candidate WHERE nobp_candidate = '$nobp'");
+    $query1 = mysqli_query($con, "SELECT * FROM tb_candidate WHERE nobp_candidate = '$nobp'");
     $num_rows = mysqli_num_rows($query1);
     if($num_rows==0){
-        $query = mysqli_query($con, "INSERT INTO candidate VALUES ('','$nobp','$nama','$jurusan','$keterangan','$datenow')");
+        $query = mysqli_query($con, "INSERT INTO tb_candidate VALUES ('','$nobp','$nama','$jurusan','$keterangan','$datenow')");
         if($query){
-            $query1 = mysqli_query($con, "INSERT INTO suara VALUES ('','$nobp','0')");
+            $query1 = mysqli_query($con, "INSERT INTO tb_result VALUES ('','$nobp','0')");
             $response = new emp();
             $response->status="200";
             $response->message="Success add candidate";

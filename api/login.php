@@ -15,8 +15,8 @@
     }
 
     $random = generateRandomString();
-    $query1 = mysqli_query($con, "UPDATE user SET token = '$random' WHERE nobp ='$nobp'");  
-    $query = mysqli_query($con, "SELECT * FROM user WHERE nobp='$nobp' AND password='$password'");
+    $query1 = mysqli_query($con, "UPDATE tb_user SET token = '$random' WHERE nobp ='$nobp'");  
+    $query = mysqli_query($con, "SELECT * FROM tb_user WHERE nobp='$nobp' AND password='$password'");
 
     $row = mysqli_fetch_array($query);
     if ($row) {

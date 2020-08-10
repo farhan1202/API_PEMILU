@@ -6,7 +6,7 @@
 
     }
 
-    $query = "SELECT * FROM candidate";
+    $query = "SELECT * FROM tb_candidate";
     $hasil = mysqli_query($con,$query);
     if(mysqli_num_rows($hasil)>0){
         $response = new emp();
@@ -26,6 +26,7 @@
         $response = new emp();
         $response->status="200";
         $response->message="Failed Fetch Data";
+        die(json_encode($response));
     }
 
 ?>
