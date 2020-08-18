@@ -16,6 +16,7 @@
             $h['nama']=$x['nama'];
             $h['jurusan']=$x['jurusan'];
             $h['keterangan']=$x['keterangan'];
+            $h['profile_image']=$x['profile_image'];
             array_push($response1, $h);
         }
         $response->status="200";
