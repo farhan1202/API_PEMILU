@@ -25,9 +25,9 @@
             if($ukuran < 1044070){
                 $path = 'image/'.$profile;
                 move_uploaded_file($filetemp, '../image/'.$profile);
-                $query = mysqli_query($con, "INSERT INTO tb_candidate VALUES ('','$nobp','$nama','$jurusan','$keterangan','$datenow','$path')");
+                $query = mysqli_query($con, "INSERT INTO tb_candidate VALUES (NULL,'$nobp','$nama','$jurusan','$keterangan','$datenow','$path')");
                 if($query){
-                    $query1 = mysqli_query($con, "INSERT INTO tb_result VALUES ('','$nobp','0')");
+                    $query1 = mysqli_query($con, "INSERT INTO tb_result VALUES (NULL,'$nobp','0')");
                     $response = new emp();
                     $response->status="200";
                     $response->message="Success add candidate";
@@ -50,10 +50,6 @@
             $response->message="Error file extention";
             die(json_encode($response));
         }
-
-
-        
-        
     }else{
         $response = new emp();
             $response->status="200";
