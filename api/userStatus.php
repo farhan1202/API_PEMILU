@@ -1,5 +1,6 @@
 <?php
     include_once ("koneksi.php");
+    header("Content-type:application/json");
 
     class emp{}
     $nobp = $_POST['nobp'];
@@ -15,8 +16,8 @@
             $response = new emp();
             $response1 = new emp();
             $response1->nobp = $rows['nobp'];
-            $response1->finger = $rows['ket'];
-            $response1->rfid = $rows['ket1'];
+            $response1->finger = $rows['ket1'];
+            $response1->rfid = $rows['ket'];
             $response1->vote = $rows['status'];
             $response->STATUS="200";
             $response->MESSAGE="SUKSES FETCH DATA";

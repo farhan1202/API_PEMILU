@@ -3,17 +3,20 @@
     header("Content-type:application/json");
 
     class emp{}
-    $nobp = $_POST['nobp'];
-    $token = $_POST['token'];
-    $query = "SELECT * FROM tb_user WHERE nobp = '$nobp' AND token ='$token'";
+    $id = $_GET['id'];
+    $query = "SELECT * FROM tb_candidate WHERE id = '$id'";
     $hasil = mysqli_query($con, $query);
 
     $rows = mysqli_fetch_array($hasil);
     if ($rows) {
         $response = new emp();
         $response1 = new emp();
-        $response1->nobp = $rows['nobp'];
+        $response1->id = $rows['id'];
+        $response1->nobp = $rows['nobp_candidate'];
         $response1->nama = $rows['nama'];
+        $response1->jurusan = $rows['jurusan'];
+        $response1->keterangan = $rows['keterangan'];
+        $response1->profile_image = $rows['profile_image'];
         $response->STATUS="200";
         $response->MESSAGE="SUKSES FETCH DATA";
         $response->DATA=$response1;

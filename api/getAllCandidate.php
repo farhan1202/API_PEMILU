@@ -12,6 +12,7 @@
         $response = new emp();
         $response1= array();
         while($x = mysqli_fetch_array($hasil)){
+            $h['id']=$x['id'];
             $h['nobp_candidate']=$x['nobp_candidate'];
             $h['nama']=$x['nama'];
             $h['jurusan']=$x['jurusan'];
